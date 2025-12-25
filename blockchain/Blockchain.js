@@ -123,9 +123,8 @@ class Blockchain {
    * Verify the integrity of the blockchain
    */
   isChainValid() {
-    // Check genesis block
-    const realGenesis = JSON.stringify(this.createGenesisBlock());
-    if (realGenesis !== JSON.stringify(this.chain[0])) {
+    // Check genesis block has correct structure
+    if (this.chain[0].index !== 0 || this.chain[0].previousHash !== '0') {
       return false;
     }
 

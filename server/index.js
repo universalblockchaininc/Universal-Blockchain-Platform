@@ -61,7 +61,7 @@ app.get('/api/blockchain/validate', (req, res) => {
 app.get('/api/block/:index', (req, res) => {
   const index = parseInt(req.params.index);
   
-  if (index < 0 || index >= universalBlockchain.chain.length) {
+  if (isNaN(index) || index < 0 || index >= universalBlockchain.chain.length) {
     return res.status(404).json({
       success: false,
       message: 'Block not found'
