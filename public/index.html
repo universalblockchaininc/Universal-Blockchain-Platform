@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Blockchain Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>⛓️ Universal Blockchain Platform</h1>
+                <p class="tagline">Decentralized ecosystem for finance, employment, and enterprise management</p>
+            </div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-label">Blocks:</span>
+                    <span class="stat-value" id="totalBlocks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Transactions:</span>
+                    <span class="stat-value" id="totalTransactions">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Pending:</span>
+                    <span class="stat-value" id="pendingTransactions">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Status:</span>
+                    <span class="stat-value status-valid" id="chainStatus">Valid</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Panel: Transaction Form -->
+            <div class="panel transaction-panel">
+                <h2>📝 Create Transaction</h2>
+                <form id="transactionForm">
+                    <div class="form-group">
+                        <label for="fromAddress">From Address</label>
+                        <input type="text" id="fromAddress" placeholder="Sender address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="toAddress">To Address</label>
+                        <input type="text" id="toAddress" placeholder="Recipient address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" placeholder="0.00" step="0.01" min="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="transactionType">Transaction Type</label>
+                        <select id="transactionType">
+                            <option value="transfer">Transfer</option>
+                            <option value="employment">Employment</option>
+                            <option value="social">Social</option>
+                            <option value="enterprise">Enterprise</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Transaction</button>
+                </form>
+
+                <div class="divider"></div>
+
+                <h3>⛏️ Mine Block</h3>
+                <div class="form-group">
+                    <label for="minerAddress">Miner Address</label>
+                    <input type="text" id="minerAddress" placeholder="Address to receive mining reward">
+                </div>
+                <button id="mineBtn" class="btn btn-success">Mine Pending Transactions</button>
+
+                <div class="divider"></div>
+
+                <h3>💰 Check Balance</h3>
+                <div class="form-group">
+                    <label for="checkAddress">Address</label>
+                    <input type="text" id="checkAddress" placeholder="Enter address to check balance">
+                </div>
+                <button id="checkBalanceBtn" class="btn btn-info">Check Balance</button>
+                <div id="balanceResult" class="result-box"></div>
+            </div>
+
+            <!-- Right Panel: Blockchain Explorer -->
+            <div class="panel explorer-panel">
+                <h2>🔍 Blockchain Explorer</h2>
+                <div id="blockchain" class="blockchain-container"></div>
+            </div>
+        </div>
+
+        <!-- Notification Area -->
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
