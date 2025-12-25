@@ -1,0 +1,27 @@
+{
+  "name": "universal-blockchain-platform",
+  "version": "1.0.0",
+  "description": "A decentralized blockchain platform for finance, employment, social interaction, and enterprise management",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "blockchain",
+    "decentralized",
+    "cryptocurrency",
+    "platform"
+  ],
+  "author": "Universal Blockchain Inc",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
